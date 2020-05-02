@@ -3,19 +3,19 @@ use num::bigint::BigUint;
 use num::FromPrimitive;
 use std::ops::{BitAnd, Mul};
 
-pub fn encrypt(C: BigUint, d: BigUint, n: BigUint) -> BigUint {
+pub fn decrypt(C: BigUint, d: BigUint, n: BigUint) -> BigUint {
     power_e_mod_n(C, d, n)
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::encrypt::encrypt;
+    use crate::decrypt::decrypt;
     use num::BigUint;
     use num::FromPrimitive;
 
     #[test]
     fn it_works() {
-        let result = encrypt(
+        let result = decrypt(
             BigUint::from_i64(948).unwrap(),
             BigUint::from_i64(157).unwrap(),
             BigUint::from_i64(2773).unwrap(),

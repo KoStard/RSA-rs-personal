@@ -14,7 +14,7 @@ fn generate_big_number(digits: usize, rng: &mut ThreadRng) -> BigUint {
     )
         .unwrap();
     let r =
-        BigUint::from_str(&std::iter::repeat("1").take(digits).collect::<String>()[..]).unwrap();
+        BigUint::from_str(&std::iter::repeat("9").take(digits).collect::<String>()[..]).unwrap();
     rng.gen_biguint_range(&l, &r)
 }
 
